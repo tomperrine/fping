@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 import fileinput
 import subprocess
 import os
@@ -14,9 +15,9 @@ def main():
             print(line, flush=True, end=" ")
             result=subprocess.run(["/sbin/ping6", "-c", "1", "-n", line],capture_output=True)
             if (result.returncode == 0):
-                print ("active")
+                print (" -> active")
             else:
-                print ("inactive")
+                print (" -> no answer")
 
 
 if __name__ == '__main__' :

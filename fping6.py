@@ -12,6 +12,7 @@ def main():
             line= line.rstrip()
             # allow comments
             if line.startswith('#'):
+                print(line)
                 continue
             print(line, flush=True, end=" ")
             result=subprocess.run(["/sbin/ping6", "-c", "1", "-n", line],capture_output=True)
